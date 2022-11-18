@@ -1,0 +1,10 @@
+---
+- name: Copy Filebeat configuration.
+  template:
+    src: "/etc/ansible/roles/filebeat/templates/filebeat.yml"
+    dest: "/etc/filebeat/filebeat.yml"
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart filebeat
+
